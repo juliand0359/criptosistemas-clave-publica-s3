@@ -1,0 +1,9 @@
+{
+  "home": {
+    "id": "home",
+    "title": "Bienvenido al blog",
+    "subtitle": "Fundamentos y aplicación práctica",
+    
+    "content": "<p>Este blog aborda los fundamentos de los criptosistemas de clave pública (cifrado asimétrico), sus algoritmos, ventajas, desventajas y su aplicación práctica en el desarrollo de software seguro.</p>"
+  }
+}
