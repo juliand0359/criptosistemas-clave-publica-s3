@@ -1,0 +1,114 @@
+/* Styles specific to sectionCard component: tables and code blocks */
+:root {
+  --table-border: rgba(255,255,255,0.06);
+  --table-head-bg: rgba(255,255,255,0.04);
+  --table-row-alt: rgba(255,255,255,0.02);
+}
+
+.table-block { overflow: auto; margin: 0.75rem 0; }
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--table-border);
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--white);
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--table-border);
+  text-align: left;
+  vertical-align: top;
+  color: var(--muted-2);
+}
+
+.detail-table thead th {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  font-weight: 600;
+  position: sticky;
+  top: 0; /* keep header visible inside scrolling container */
+  z-index: 2;
+  color: var(--muted-2);
+}
+
+.detail-table tbody tr:nth-child(odd) {
+  background: var(--table-row-alt);
+}
+
+.detail-block.table-block { padding: 0.5rem; border-radius: 6px; }
+
+/* Code block styling (minimal) */
+.detail-block pre {
+  background: #0b1020;
+  color: #e6eef8;
+  padding: 0.75rem;
+  border-radius: 6px;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .detail-table th, .detail-table td { padding: 0.45rem 0.6rem; font-size: 0.9rem; }
+}
+
+.detail-sources { margin-top: 1rem; font-size: 0.92rem; color: var(--muted-2); }
+.detail-sources h4 { margin: 0 0 0.5rem 0; font-size: 0.98rem; color: var(--muted-1); }
+.detail-sources ul { margin: 0; padding-left: 1.15rem; }
+.detail-sources li { margin: 0.25rem 0; }
+.detail-sources a { color: var(--accent, #7dd3fc); text-decoration: underline; }
+
+/* Demo styles */
+.demo-controls { margin-bottom: 0.5rem; }
+.demo-btn {
+  background: linear-gradient(180deg,var(--accent, #7dd3fc), #3fb0d6);
+  color: #022029;
+  border: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.demo-btn:disabled { opacity: 0.6; cursor: default; }
+.crypto-demo { background: rgba(255,255,255,0.02); padding: 0.5rem; border-radius: 6px; margin-top: 0.5rem; }
+.crypto-demo pre { white-space: pre-wrap; word-break: break-word; font-size: 0.9rem; }
+.demo-output { margin-top: 0.5rem; }
+
+.demo-code-block pre { background: #07111f; color: #e6eef8; padding: 0.75rem; border-radius: 6px; overflow: auto; }
+
+/* Modern toggle button used to show/hide code (demo and code blocks) */
+.demo-code-toggle,
+.code-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: var(--accent, #7dd3fc);
+  border: 1px solid rgba(125,211,252,0.12);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 150ms ease, transform 60ms ease, box-shadow 120ms ease;
+}
+.demo-code-toggle:hover,
+.code-toggle-btn:hover {
+  background: linear-gradient(180deg, rgba(125,211,252,0.06), rgba(125,211,252,0.02));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(2,32,41,0.12);
+}
+.demo-code-toggle:active,
+.code-toggle-btn:active { transform: translateY(0); }
+.demo-code-toggle:focus,
+.code-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(125,211,252,0.12);
+}
+
+.code-block .code-toggle-btn { margin-bottom: 0.6rem; }
+.demo-label { display: block; margin-bottom: 0.35rem; color: var(--muted-1); }
+.demo-input { width: 100%; padding: 0.45rem 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.04); margin-bottom: 0.5rem; background: transparent; color: var(--white); }
